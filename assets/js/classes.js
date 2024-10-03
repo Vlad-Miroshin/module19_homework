@@ -77,16 +77,26 @@ class Laptop extends Device {
 }
 
 class Washer extends Device {
-    constructor(power = 2000) {
-        super(power);
+    _capacity = 4; // максимальная загрузка, кг
+
+    constructor(power = 2000, model = '') {
+        super(power, model);        
+    }
+
+    getCapacity() {
+        return this._capacity;
+    }
+
+    setCapacity(value) {
+        return this._capacity = value;
     }
 }
 
 class Boiler extends Device {
-    _volume = 100;
+    _volume = 100; // объём, литров
 
-    constructor(power = 2500) {
-        super(power);
+    constructor(power = 2500, model = '') {
+        super(power, model);        
     }
 
     getVolume() {
