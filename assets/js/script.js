@@ -7,7 +7,7 @@ devices.add(new Lamp(100, 'Inc'));
 devices.add(new Laptop(200, 'Lenovo'));
 devices.add(new Laptop(150, 'Apple'));
 devices.add(new Washer());
-devices.add(new Boiler());
+const boiler = devices.add(new Boiler());
 
 function logTotalInputPower(devices) {
     console.log(`Total input power is ${devices.getInputPower()} wt`);
@@ -44,7 +44,6 @@ devices.switchOff();
 
 // включить бойлер
 logCommand('SwitchOn(Boiler)');
-const boiler = devices.getItemsByClassName('Boiler');
 boiler.switchOn();
 
 logTotalInputPower(devices);

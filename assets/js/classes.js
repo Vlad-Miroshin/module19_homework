@@ -113,6 +113,7 @@ class DeviceSet {
 
     add(device) {
         this._items.push(device);
+        return device;
     }
 
     get count() {
@@ -142,11 +143,11 @@ class DeviceSet {
         );
     }
 
-    getItemsByClassName(name) {
+    getItemsByClassName(className) {
         const set = new DeviceSet();
 
         this._items.forEach(element => {
-            if (element.getClassName() === name) {
+            if (element.getClassName() === className) {
                 set.add(element);
             }
         });
