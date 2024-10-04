@@ -1,9 +1,17 @@
-import {logOwnProps} from '../assets/js/functions.js'
-
 // Задание 1
 // Напишите функцию, которая принимает в качестве аргумента объект 
 // и выводит в консоль все ключи и значения только собственных свойств. 
 // Данная функция не должна возвращать значение.
+
+export function logOwnProps(obj) {
+    const keys = Object.getOwnPropertyNames(obj);
+
+    keys.forEach(
+        (key) => console.log(`${key} : ${obj[key]}`)
+    );
+}
+
+// проверка
 
 const customer = {
     uuid: 'f227c5f-de3e-4cc7-b561-32a49a25b210',
