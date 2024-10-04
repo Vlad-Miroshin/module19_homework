@@ -1,5 +1,3 @@
-import {logOwnProps} from '../task_1/script_1.js'
-
 // Задание 2
 // Напишите функцию, которая принимает в качестве аргументов строку и объект, 
 // а затем проверяет, есть ли у переданного объекта свойство с данным именем. 
@@ -28,10 +26,15 @@ function Customer() {
     this.birthDay = '1983-05-11'
 }
 
+const customer = new Customer();
+
+console.log('Object customer');
+Object.getOwnPropertyNames(customer).forEach(
+    (key) => console.log(`${key} : ${customer[key]}`)
+);
+
 // добавим свойство прототипу
 Customer.prototype.abc = "abc";
-
-const customer = new Customer();
 
 console.log('');
 console.log(`hasOwnProp('familyName', customer) === ${hasOwnProp('familyName', customer)}`);

@@ -3,7 +3,7 @@
 // и выводит в консоль все ключи и значения только собственных свойств. 
 // Данная функция не должна возвращать значение.
 
-export function logOwnProps(obj) {
+function logOwnProps(obj) {
     const keys = Object.getOwnPropertyNames(obj);
 
     keys.forEach(
@@ -26,3 +26,4 @@ const customer = {
 console.log('Object customer');
 
 logOwnProps(customer);
+
