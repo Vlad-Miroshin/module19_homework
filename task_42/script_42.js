@@ -1,11 +1,6 @@
-import {Lamp, Laptop, Washer, Boiler, DeviceSet} from './proto_4.js';
+import {Device, Lamp, Laptop, Washer, Boiler, DeviceSet} from './proto_42.js';
 
 const lamp1 = new Lamp();
-//lamp1.prototype = new Device(10);
-console.log(lamp1);
-
-lamp1.switchOn();
-
 const lamp2 = new Lamp(20);
 const lamp3 = new Lamp(100, 'Inc');
 

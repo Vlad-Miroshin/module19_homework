@@ -1,4 +1,4 @@
-export {Lamp, Laptop, Washer, Boiler, DeviceSet}
+export {Device, Lamp, Laptop, Washer, Boiler, DeviceSet}
 
 const STATE_ON = true;
 const STATE_OFF = false;
@@ -17,7 +17,7 @@ function Device(power, model = '') {
 
         this._power = value;
     }
-    
+
     this.getPower = function() {
         return this._power;
     }    
@@ -46,11 +46,15 @@ function Device(power, model = '') {
         return this.isOn() ? this.getPower() : 0;
     }
 
+    this.getSelfName = function() {
+        return this.constructor.name;
+    }
+
     this.toString = function() {
         if (this.getModel()) {
-            return `${this.name}('${this.getModel()}', ${this.getPower()}wt)`
+            return `${this.getSelfName()}('${this.getModel()}', ${this.getPower()}wt)`
         } else {
-            return `${this.name}(${this.getPower()}wt)`
+            return `${this.getSelfName()}(${this.getPower()}wt)`
         }
     }
 
