@@ -10,7 +10,7 @@ const laptop2 = device.create(laptop, {kind: 'Laptop', power: 200, model: 'Lenov
 const washer1 = device.create(washer, {kind: 'Washer', power: 2000, model: 'Indesit'});
 washer1.setCapacity(7);
 
-const boiler1 = device.create(boiler, {kind: 'Boiler', power: 2500, model: 'AEG'});
+const boiler1 = device.create(boiler, {kind: 'Boiler', power: 2500, model: 'Ariston'});
 boiler1.setVolume(250);
 
 
@@ -72,18 +72,3 @@ logCommand('SwitchOff');
 devices.switchOff();
 
 logTotalInputPower(devices);
-
-
-
-
-
-
-
-lamp1.switchOn();
-
-console.log(lamp1.toString(), lamp2.toString(), lamp3.toString());
-
-// const lamp2 = new Lamp(20);
-// const lamp3 = new Lamp(100, 'Inc');
-
-

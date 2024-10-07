@@ -119,15 +119,21 @@ const boiler = {
 }
 
 const deviceSet = {
-    _items: [],
+
+    getItems() {
+        if (this._items === undefined)
+            this._items = [];
+
+        return this._items;
+    },
 
     add(device) {
-        this._items.push(device);
+        this.getItems().push(device);
         return device;
     },
 
     getCount() {
-        return this._items.length;
+        return this.getItems().length;
     },
 
     isEmpty() {
@@ -135,26 +141,26 @@ const deviceSet = {
     },
 
     switchOn() {
-        this._items.forEach(element => {
+        this.getItems().forEach(element => {
             element.switchOn()
         });
     },
 
     switchOff() {
-        this._items.forEach(element => {
+        this.getItems().forEach(element => {
             element.switchOff()
         });
     },
 
     getInputPower() {
-        return this._items.reduce(
+        return this.getItems().reduce(
             (sum, item) => sum + item.getInputPower()
             , 0
         );
     },
 
     toString() {
-        const captions = this._items.map(item => item.toString());
+        const captions = this.getItems().map(item => item.toString());
         return captions.join(', ');
     }
 }
