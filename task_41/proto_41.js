@@ -75,11 +75,14 @@ const device = {
     },
 
     toString() {
-        if (this.getModel()) {
-            return `${this.getKind()}('${this.getModel()}', ${this.getPower()}wt)`
-        } else {
-            return `${this.getKind()}(${this.getPower()}wt)`
-        }
+        const keys = Object.getOwnPropertyNames(this);
+        const props = [];
+
+        keys.forEach(
+            (key) => props.push(`${key}: ${this[key]}`)
+        );
+
+        return `Device(${props.join(', ')})`;
     }
 
 }
