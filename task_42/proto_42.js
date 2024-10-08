@@ -113,7 +113,7 @@ function DeviceSet() {
     }
 
     this.isEmpty = function() {
-        return this.count === 0;
+        return this.getCount() === 0;
     }
 
     this.switchOn = function() {
