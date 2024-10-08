@@ -140,7 +140,7 @@ const deviceSet = {
     },
 
     isEmpty() {
-        return this.count === 0;
+        return this.getCount() === 0;
     },
 
     switchOn() {
