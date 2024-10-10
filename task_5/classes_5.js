@@ -65,8 +65,28 @@ class Device {
 }
 
 class Lamp extends Device {
+    _dimmer = 100;  // значение диммера 0-100%
+
     constructor(power = 10, model = 'LED') {
         super(power, model);        
+    }
+
+    getDimmer() {
+        return this._dimmer;
+    }
+
+    setDimmer(value) {
+        if (typeof value !== 'number') 
+            throw new Error("Value type must be 'number'");
+
+        if (value < 0 || value > 100)
+            throw new Error("Value must be from 0 to 100 (%)");
+
+        this._dimmer = value;
+    }
+
+    getInputPower() {
+        return super.getInputPower() * this.getDimmer() / 100;
     }
 }
 

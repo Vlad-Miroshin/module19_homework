@@ -3,11 +3,13 @@ import {Lamp, Laptop, Washer, Boiler, DeviceSet} from './classes_5.js';
 const devices = new DeviceSet();
 devices.add(new Lamp());
 devices.add(new Lamp(20));
-devices.add(new Lamp(100, 'Inc'));
+const lamp3 = devices.add(new Lamp(100, 'Inc'));
 devices.add(new Laptop(200, 'Lenovo'));
 devices.add(new Laptop(150, 'Apple'));
 devices.add(new Washer());
 const boiler = devices.add(new Boiler());
+
+lamp3.setDimmer(50);
 
 function logTotalInputPower(devices) {
     console.log(`Total input power is ${devices.getInputPower()} wt`);
